@@ -11,5 +11,7 @@ namespace Spike.Models
         public int BlogId { get; set; }
 
         public Blog Blog { get; set; }
+
+        public int Rating { get; set; }
     }
 }
