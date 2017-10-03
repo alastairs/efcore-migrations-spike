@@ -15,12 +15,15 @@ namespace Spike
                     .Where(b => b.Rating > 3)
                     .OrderBy(b => b.Url)
                     .ToList();
-                Console.WriteLine(blogs.Select(b => b.Url));
+
+                blogs.ForEach(b => Console.WriteLine($"{b.Url} is rated {b.Rating}"));
 
 
-                var blog = new Blog { Url = "http://www.example.com" };
+                var blog = new Blog { Url = "http://www.example.com", Rating = 4 };
                 db.Blogs.Add(blog);
                 db.SaveChanges();
+
+                Console.ReadLine();
             }
         }
     }
